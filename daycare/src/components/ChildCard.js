@@ -6,7 +6,6 @@ import { checkIn, checkOut } from '../helpers/api';
 export default function ChildCard({name, id, checkedIn, lastCheckedIn, image, getChildren}) {
     const [isCheckedIn, setIsCheckedIn] = useState(false);
     const [time, setTime] = useState('');
-    const [checkInTime, setCheckInTime] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault();
