@@ -28,6 +28,11 @@
   .details {
     text-align: center;
   }
+
+  .child-name {
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
   
   .check-in {
     /* background: #00FFAA; */

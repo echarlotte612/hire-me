@@ -18,7 +18,9 @@ export const checkIn = async (setIsCheckedIn, id, time) => {
             }
         })
         .catch(err => {
-            console.error(err)
+            console.error(err.response.data.error)
+            alert(`Couldn't check in child: \n${err.response.data.error}`)
+            setIsCheckedIn(false)
         })
 }
 
@@ -36,6 +38,8 @@ export const checkOut = async (setIsCheckedIn, id) => {
             }
         })
         .catch(err => {
-            console.error(err)
+            console.error(err.response.data.error)
+            alert(`Couldn't check out child: \n${err.response.data.error}`)
+            setIsCheckedIn(true)
         })
 }

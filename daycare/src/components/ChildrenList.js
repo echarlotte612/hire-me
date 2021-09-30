@@ -32,7 +32,7 @@ export default function ChildrenList() {
     }
 
     useEffect(() => {
-        getChildren(setChildren)
+        getChildren()
     }, [])
 
     return (

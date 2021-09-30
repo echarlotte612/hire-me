@@ -4,8 +4,9 @@ import timestamp from 'time-stamp';
 import { checkIn, checkOut } from '../helpers/api';
 
 export default function ChildCard({name, id, checkedIn, lastCheckedIn, image, getChildren}) {
-    const [isCheckedIn, setIsCheckedIn] = useState(checkedIn);
+    const [isCheckedIn, setIsCheckedIn] = useState(false);
     const [time, setTime] = useState('');
+    const [checkInTime, setCheckInTime] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,7 +26,7 @@ export default function ChildCard({name, id, checkedIn, lastCheckedIn, image, ge
                 <img src={image} alt="user avatar" />
             </div>
             <div className="details">
-                <h2>{name}</h2>
+                <h3 className="child-name">{name}</h3>
             </div>
             <div className="check-in-out">
                 {isCheckedIn &&
