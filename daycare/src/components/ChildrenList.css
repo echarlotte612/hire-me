@@ -1,0 +1,14 @@
+.children-list {
+    width: 100%;
+    max-width: 100%;
+    /* Flex Container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+  
+.infinite-scroll-message {
+    flex-basis: 100%;
+    text-align: center;
+}

@@ -1,0 +1,53 @@
+.child-card {
+    border: solid 1px #000000;
+    border-radius: 4px;
+    margin: 0.5rem;
+    background: #5c34a3;
+    color: #FFFFFF;
+    padding: 0.5rem;
+    /* Flex Container */
+    width: 20%;
+    max-width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .profile-picture {
+      display: flex;
+      justify-content: center;
+  }
+  
+  .profile-picture img{
+    margin: 1rem;
+    border-radius: 50%;
+    max-width: 80%;
+  }
+  
+  .details {
+    text-align: center;
+  }
+
+  .child-name {
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
+  
+  .check-in {
+    /* background: #00FFAA; */
+    background: #08df41;
+    padding: 1em;
+    border: none;
+    border-radius: 4px;
+    margin: 0 0.25rem 0 0.25rem;
+  }
+  
+  .check-out {
+    background: #e91d62;
+    padding: 1em;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    margin: 0 0.25rem 0 0.25rem;
+  }
