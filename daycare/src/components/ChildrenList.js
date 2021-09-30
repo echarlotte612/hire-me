@@ -19,7 +19,6 @@ export default function ChildrenList() {
                     let results = response.data.children
                     setLength(results.length)
                     setChildren([...children, ...results.slice(children.length,children.length+8)]);
-                    console.log(children)
                     setIsLoading(false)
                 }
                 else {
@@ -52,7 +51,7 @@ export default function ChildrenList() {
                     }
                 >
                     {children.map((child, index) =>
-                        <ChildCard name={child.name.fullName} key={index} id={child.childId} lastCheckedIn={child.checkinTime} image={child.image.large} />
+                        <ChildCard getChildren={getChildren} name={child.name.fullName} key={index} id={child.childId} isCheckedIn={child.checkedIn} lastCheckedIn={child.checkinTime} image={child.image.large} />
                     )}
                 </InfiniteScroll>
             </div>
