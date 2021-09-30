@@ -1,11 +1,29 @@
 import React from 'react'
 
-export default function ChildCard() {
+export default function ChildCard({name, id, lastCheckedIn, image}) {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert(`${name}: ${id}`)
+    }
+
     return (
         <div className="child-card">
-            <h2>Name</h2>
-            <h5>Details...</h5>
-            <button>Click Me</button>
+            <div className="profile-picture">
+                <img src={image} alt="user avatar" />
+            </div>
+            <div className="details">
+                <h2>{name}</h2>
+                <h5>{lastCheckedIn}</h5>
+            </div>
+            <div className="check-in-out">
+
+                    <button className="check-out" onClick={e => handleSubmit(e)}>Check Out</button>
+                
+               
+                    <button className="check-in" onClick={e => handleSubmit(e)}>Check In</button>
+                
+            </div>
         </div>
     )
 }
