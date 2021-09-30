@@ -1,9 +1,10 @@
-
+import ChildrenList from './components/ChildrenList';
 
 function App() {
   return (
     <div className="App">
-      Hello World
+      <h1 className="title">Daycare Attendance</h1>
+      <ChildrenList />
     </div>
   );
 }
