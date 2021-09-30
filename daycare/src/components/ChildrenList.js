@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './ChildrenList.css';
 import ChildCard from './ChildCard';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -17,7 +18,7 @@ export default function ChildrenList() {
                 if (response.status === 200) {
                     let results = response.data.children
                     setLength(results.length)
-                    setChildren([...children, ...results.slice(children.length,children.length+4)]);
+                    setChildren([...children, ...results.slice(children.length,children.length+8)]);
                     console.log(children)
                     setIsLoading(false)
                 }
@@ -37,7 +38,7 @@ export default function ChildrenList() {
 
     return (
         <div className="children-list-wrap">
-            <ul className="children-list">
+            <div className="children-list">
                 <InfiniteScroll
                     dataLength={children.length} // Length of current array //
                     next={getChildren} // action to get more data //
@@ -48,13 +49,13 @@ export default function ChildrenList() {
                         <p className="infinite-scroll-message">
                             <b>No more records to show.</b>
                         </p>
-                    } 
+                    }
                 >
                     {children.map((child, index) =>
                         <ChildCard name={child.name.fullName} key={index} id={child.childId} lastCheckedIn={child.checkinTime} image={child.image.large} />
                     )}
                 </InfiniteScroll>
-            </ul>
+            </div>
             {isLoading &&
                 <div className="loading">
                     <p>Loading...</p>
